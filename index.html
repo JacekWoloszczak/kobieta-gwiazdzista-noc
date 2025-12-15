@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="weight">
+        <img class="image" src="./assets/kobieta gwiezdzistego nieba.png" width="1200" height="800"></img>
+
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+background: #2d80a1;
+background: linear-gradient(90deg,rgba(45, 128, 161, 1) 0%, rgba(38, 30, 30, 1) 100%);
+        }
+        .weight{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+        }
+        .image{
+    
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
+.star{
+    width: 2px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 2px white;
+    animation: twinkle 2s infinite ease-in-out;
+}
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+
+</style>
+<script>
+    function createStars() {
+  const numberOfStars = 100; // Adjust for more or fewer stars
+  for (let i = 0; i < numberOfStars; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+
+    // Random size, position, and animation duration for each star
+    const size = Math.random() * 3 + 1;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.left = `${Math.random() * 100}vw`;
+    star.style.top = `${Math.random() * 100}vh`;
+    star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+
+    document.body.appendChild(star);
+  }
+}
+createStars();
+</script>
+    
+
+
+
+</body>
+    
+</html>
